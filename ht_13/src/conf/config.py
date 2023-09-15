@@ -8,9 +8,9 @@ class Settings(BaseSettings):
     postgres_password: str = "password"
     postgres_port: str = "db_port"
     sqlalchemy_database_url: str = 'postgresql+psycopg2://user:password@localhost:5432/postgres'
-    secret_key_a: str = "secret_key_access"
-    secret_key_r: str = "secret_key_refresh"
-    algorithm: str = "HS256"
+    secret_key_a: str = "secret"
+    secret_key_r: str = "secret"
+    algorithm: str = "algorithm"
     mail_username: str = "example@meta.ua"
     mail_password: str = "password"
     mail_from: str = "example@meta.ua"
