@@ -128,6 +128,17 @@ class TestContactsRepository(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result, [])
 
     async def test_update__(self):
+        """
+        The test_update__ function tests the update function.
+        It does so by creating a Contact object, and then using the patch decorator to mock out
+        the get_contact_by_id function from contacts.py in order to return that contact object.
+        The test then calls update with the mocked contact id, body (a ContactModel), user (self.user) and session (self.session).
+        Finally it asserts that result is equal to cont, which was created at the beginning of this test.
+
+        :param self: Represent the instance of the object that is passed to the method
+        :return: The updated contact
+        :doc-author: Trelent
+        """
         cont = Contact()
         body = ContactModel(
             first_name="Harley",
