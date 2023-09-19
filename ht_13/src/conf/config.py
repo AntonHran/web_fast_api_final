@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     sqlalchemy_database_url: str = 'postgresql+psycopg2://user:password@localhost:5432/postgres'
     secret_key_a: str = "secret"
     secret_key_r: str = "secret"
-    algorithm: str = "algorithm"
+    algorithm: str = "HS256"
     mail_username: str = "example@meta.ua"
     mail_password: str = "password"
     mail_from: str = "example@meta.ua"
@@ -22,9 +22,9 @@ class Settings(BaseSettings):
     cloudinary_api_key: int = 00000000000
     cloudinary_api_secret: str = "secret"
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8")
 
 
 settings = Settings()

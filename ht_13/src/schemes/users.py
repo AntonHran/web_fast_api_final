@@ -1,6 +1,6 @@
 from typing import List
 
-from pydantic import BaseModel, Field, EmailStr
+from pydantic import BaseModel, Field, EmailStr, ConfigDict
 
 from ht_13.src.database.models_ import Role
 from ht_13.src.schemes.contacts import ContactResponse
@@ -19,9 +19,9 @@ class UserResponse(BaseModel):
     avatar: str
     roles: Role
     contacts: List[ContactResponse] if ContactResponse else None
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+    '''class Config:
+        from_attributes = True'''
 
 
 class TokenModel(BaseModel):

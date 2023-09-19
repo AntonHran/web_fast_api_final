@@ -1,7 +1,7 @@
 from datetime import date
 # from typing import List
 
-from pydantic import BaseModel, Field, EmailStr
+from pydantic import BaseModel, Field, EmailStr, ConfigDict
 from pydantic_extra_types.phone_numbers import PhoneNumber
 
 
@@ -22,6 +22,6 @@ class ContactResponse(BaseModel):
     phone_number: PhoneNumber
     birth_date: date = None
     notes: str
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+    # class Config:
+        # from_attributes = True

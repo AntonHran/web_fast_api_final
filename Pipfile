@@ -23,8 +23,13 @@ pydantic-settings = "*"
 pydantic = {extras = ["dotenv"], version = "*"}
 fastapi-limiter = "*"
 cloudinary = "*"
+httpx = "*"
+itsdangerous = "*"
 
 [dev-packages]
+sphinx = "*"
+pytest = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.11"
